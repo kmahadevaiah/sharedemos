@@ -10,6 +10,6 @@ export class ActivityFeedService {
 
   getActivityData() {
    // return this.httpService.get('../../assets/activity_feed.json');
-   return this.httpService.get('/assets/activity_feed.json');
+   return this.httpService.get('./assets/activity_feed.json');
   }
 }

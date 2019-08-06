@@ -9,6 +9,6 @@ export class LibraryService {
   constructor(private httpService: HttpClient) { }
 
   getData() {
-    return this.httpService.get('/assets/library_settings.json');
+    return this.httpService.get('./assets/library_settings.json');
   }
 }
