@@ -11,14 +11,14 @@
   "form": {
     "name": "storagehub",
     "domain": "storagehub.vmware.com",
-    "logo": "../../../assets/widget.png",
+    "logo": "widget.png",
     "background_color": "#2BA0CC",
     "progress_bar_color": "#fb5758",
     "title_color": "#ffffff",
     "paragraph_color": "#ffffff",
     "description": "site description",
     "title": "Product Walkthroughs",
-    "favicon": "../../../assets/widget.png"
+    "favicon": "widget.png"
   },
   "tenant": {
     "flags": {
