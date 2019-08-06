@@ -23,7 +23,7 @@
 .main-nav-wrapper a:before {
     content: "";
     position: absolute;
-    background: url('../../assets/icons.png');
+    background: url('/assets/icons.png');
     width: 18px;
     height: 18px;
     display: inline-block;
