@@ -1,0 +1,163 @@
+<app-library-nav></app-library-nav>
+<div class="container-fluid">
+    <div class="row">
+        <div [ngClass]="status ? 'col-9' : 'col-12'">
+            <div class="report-content-wrapper">
+                <div class="float-right">
+                    <button class="btn button-toggle btn-primary" (click)="onClick()"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                </div>
+                <div class="p-3">
+                    <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <div class="container">
+                                        <div class="row">
+                                            <td class="col-4">
+                                                <span><i class="fa fa-question-circle"></i></span>
+                                                <div class="site-info">
+                                                    <p class="font-size">Site Visitors</p>
+                                                    <h2 class="font-weight-bold">0</h2>
+                                                    <p class="para-desc">0% from last period</p>
+                                                </div>
+                                            </td>
+                                            <td class="col-4">
+                                                <span><i class="fa fa-question-circle"></i></span>
+                                                <div class="site-info">
+                                                    <p class="font-size">Views</p>
+                                                    <h2 class="font-weight-bold">0</h2>
+                                                    <p class="para-desc">0% from last period</p>
+                                                </div>
+                                            </td>
+                                            <td class="col-4">
+                                                <span><i class="fa fa-question-circle"></i></span>
+                                                <div class="site-info">
+                                                    <p class="font-size">Completion Rate</p>
+                                                    <h2 class="font-weight-bold">0%</h2>
+                                                    <p class="para-desc">0% from last period</p>
+                                                </div>
+                                            </td>
+                                        </div>
+                                    </div>          
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="graph-container">
+                                            <div id="area-graph"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <div class="container">
+                                        <div class="row">
+                                            <td class="col-6">
+                                                <div class="bar-graph-container">
+                                                    <div id="bar-graph"></div>
+                                                </div>
+                                            </td>
+                                            <td class="col-6">
+                                                <div class="table-container">
+                                                    <h6 class="table-heading">Popular Chapters</h6>
+                                                    <table>
+                                                        <thead>
+                                                            <th class="col-8">Chapters</th>
+                                                            <th class="col-2">Views</th>
+                                                            <th class="col-2">Completion Rate</th>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Intro<br>Fruits>Orange>Intro</td>
+                                                                <td>100</td>
+                                                                <td>100%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nutrition<br>Vegetable>Broccoli>Intro</td>
+                                                                <td>75</td>
+                                                                <td>50%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Intro to Chicken<br>Meat>Chicken>Intro to Chicken</td>
+                                                                <td>48</td>
+                                                                <td>0%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Intro <br>Daily>Chees>Intro</td>
+                                                                <td>32</td>
+                                                                <td>25%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Making a Margarita <br>Drinks>Making a Margarita</td>
+                                                                <td>14</td>
+                                                                <td>100%</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </div>
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <div class="container">
+                                        <div class="row">
+                                            <td class="col-6">
+                                                <div class="bar-graph-container">
+                                                    <!--pie chart comes here-->
+                                                </div>
+                                            </td>
+                                            <td class="col-6">
+                                                <div id="mapContainer" class="table-container">
+                                                    <!--high map comes here-->
+                                                    
+                                                </div>
+                                            </td>
+                                        </div>
+                                    </div>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-3" *ngIf="status">
+            <div class="filter_class p-3">
+                <h3 class="d-inline filter">Filter</h3>
+                <span class="float-right">
+                    <button class="btn btn-link clear-all">Clear all</button>
+                </span>
+                <div class="form-group">
+                    <label class="sub-heading">Matrics for</label>
+                    <select class="form-control">
+                        <option selected></option>
+                        <option value="1">Today</option>
+                        <option value="2">Yesterday</option>
+                        <option value="3">1 Week</option>
+                        <option value="4">1 Month</option>
+                        <option value="5">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="7">12 Months</option>
+                        <option value="">Custom</option>
+                    </select>  
+                    <i class="fa fa-chevron-down"></i>  
+                </div>
+                <div class="form-group">
+                    <label class="sub-heading">Language</label>
+                    <select class="form-control">
+                        <option selected></option>
+                        <option value="1">English (US)</option>
+                    </select>   
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="form-group">             
+                    <label class="sub-heading">Categories</label>
+                    <br>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">All</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">a</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">abcdefghijklmno</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">Dairy</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">Demo</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">Demo 2</button>               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

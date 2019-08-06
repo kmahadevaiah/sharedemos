@@ -1,0 +1,35 @@
+{
+  "tenant_aps": [
+    { "is_enabled": true, "id": "bulletin_board" },
+    { "is_enabled": true, "id": "checklist" },
+    { "is_enabled": true, "id": "journeys" },
+    { "is_enabled": true, "id": "pathfinder" },
+    { "is_enabled": true, "id": "quiz" },
+    { "is_enabled": true, "id": "rating" }
+  ],
+  "is_announcement_widget_enabled": false,
+  "form": {
+    "name": "storagehub",
+    "domain": "storagehub.vmware.com",
+    "logo": "../../../assets/widget.png",
+    "background_color": "#2BA0CC",
+    "progress_bar_color": "#fb5758",
+    "title_color": "#ffffff",
+    "paragraph_color": "#ffffff",
+    "description": "site description",
+    "title": "Product Walkthroughs",
+    "favicon": "../../../assets/widget.png"
+  },
+  "tenant": {
+    "flags": {
+      "box_integration_enabled": false,
+      "is_private": false,
+      "allow_offline": false,
+      "can_download": true,
+      "can_embed": true,
+      "chapter_autoflow": true,
+      "show_notes": true
+    },
+    "template": "vmware"
+  }
+}

@@ -1,0 +1,101 @@
+<app-library-nav></app-library-nav>
+<div class="dashboard-content-wrapper">
+  <nav class="navbar navbar-expand-sm justify-content-center setting-nav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/library/settings/general" routerLinkActive="activated active" class="navview">GENERAL</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/library/settings/advanced" routerLinkActive="activated active" class="ml-5 navview">ADVANCED</a>
+        </li>
+    </ul>
+  </nav>
+  <hr>
+  <div class="container" *ngIf="settingFormData">
+    <form  [formGroup]="registrationForm">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td class="col-6">
+              <div class="form-group">
+                <p><span class="form-heading">Set Title</span>({{36-title.value.length}} characters left)<span class="text-danger">*</span></p>
+                <span class="form-text text-muted">This is the main title for your site</span>
+                <input type="text" [class.is-invalid]="this.registrationForm.get('title').invalid && this.registrationForm.get('title').touched" formControlName="title" id="title" #title class="form-control input-size" required maxlength="36" placeholder="Enter site title" [value]=this.formData.name>
+                <div *ngIf="this.registrationForm.get('title').invalid && (this.registrationForm.get('title').touched)" class="text-danger">
+                  <div *ngIf="this.registrationForm.get('title').invalid">title is required.</div>
+                </div>
+              </div>
+            </td>
+            <td class="col-6">
+              <div class="form-group">
+                <p><span class="form-heading">Site Description</span>({{98-desc.value.length}} characters left)</p>
+                <span class="form-text text-muted">This is the description of your site</span>
+                <textarea formControlName="desc" placeholder="Enter site description" id="desc" #desc maxlength="98" class="form-control ctrlsize" rows="5" [value]=this.formData.description></textarea>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-6">
+              <div class="form-group">
+                <p><span class="form-heading">Site URL</span><span class="text-danger">*</span></p>
+                <span class="form-text text-muted">This is the main title for your site</span>
+                <div class="input-group input-size">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">https://</span>
+                  </div>
+                  <input type="url" class="form-control" [class.is-invalid]="this.registrationForm.get('url').invalid && this.registrationForm.get('url').touched" required formControlName="url" [value]=this.formData.domain maxlength="36">
+                </div> 
+                <div *ngIf="this.registrationForm.get('url').invalid && (this.registrationForm.get('url').dirty || this.registrationForm.get('url').touched)" class="text-danger">
+                  <div *ngIf="this.registrationForm.get('url').invalid">url is required.</div>
+                </div>
+              </div>
+            </td>
+            <td class="col-6">
+              <div class="form-group">
+                <p><span class="form-heading">Home Page Title</span>({{36-homepageTitle.value.length}} characters left)<span class="text-danger">*</span></p>
+                <span class="form-text text-muted">This is the main title for your site</span>
+                <input type="text" formControlName="homepageTitle" id="homepageTitle" #homepageTitle [class.is-invalid]="this.registrationForm.get('homepageTitle').invalid && this.registrationForm.get('homepageTitle').touched" [value]=this.formData.title class="form-control input-size" required maxlength="36" placeholder="Enter site title">
+                <div *ngIf="this.registrationForm.get('homepageTitle').invalid && (this.registrationForm.get('homepageTitle').dirty || this.registrationForm.get('homepageTitle').touched)" class="text-danger">
+                  <div *ngIf="this.registrationForm.get('homepageTitle').invalid">title is required.</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-6">
+              <div class="form-group">
+                <p class="form-heading">Upload Company Logo</p>
+                <span class="form-text text-muted">Upload PNG or JPG file (100 x 36 pixels max)</span>
+                <img [src]=this.formData.logo class="image-size">
+                <input class="display-input" type="file" formControlName="logo" (change)="onLogoUpload($event)" #logoFile>
+                <button (click)="logoFile.click()" class="btn browse-btn btn-outline-primary">Browse</button>
+                <span class="form-text text-muted">company-logo.png</span>
+              </div>
+            </td>
+            <td class="col-6">
+              <div class="form-group">
+                <p class="form-heading">Upload Company Favicon</p>
+                <span class="form-text text-muted">Upload PNG or JPG file (16 x 16 pixels max)</span>
+                <img [src]=this.formData.favicon class="image-size">
+                <input class="display-input" type="file" formControlName="favicon" (change)="onFaviconUpload($event)" #faviconFile>
+                <button (click)="faviconFile.click()" class="btn browse-btn btn-outline-primary">Browse</button>
+                <span class="form-text text-muted">company-logo.png</span>
+              </div>
+            </td>
+          </tr>    
+          <tr>
+            <td></td>
+            <td>
+              <div class="submit_button">       
+                  <button type="submit" class="btn btn-outline-primary btn-light">Cancel</button>
+                  <button type="submit" class="btn btn-outline-primary btn-light save-btn" >Save</button>
+              </div>  
+            </td>
+          </tr>          
+        </tbody>
+      </table>      
+    </form>
+  </div>
+</div>

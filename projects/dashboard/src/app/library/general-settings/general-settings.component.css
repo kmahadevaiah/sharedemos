@@ -1,0 +1,27 @@
+.form-text {
+	font-size: 12px;
+}
+
+.input-size{
+	width: 400px;
+}
+
+.image-size {
+	height: 64px;
+	width: 64px;
+	border: 1px solid #E4EAEF;
+	border-radius: 2px;
+}
+
+.browse-btn{
+	margin-left:24px;
+}
+
+.form-heading{
+	font-weight: bold;
+}
+
+.display-input{
+	display: none;
+}
+

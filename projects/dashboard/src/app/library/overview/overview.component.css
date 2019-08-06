@@ -1,0 +1,44 @@
+h1 {
+	height: 36px;
+	color: #454545;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 36px;
+}
+span {
+	height: 24px;
+	color: #7D8793;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 24px;
+}
+.collaborators {
+	height: 24px;
+	color: #547188;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 24px;
+}
+.circle {
+	height: 36px;
+	width: 36px;
+	border-radius: 50%;
+	color:white;
+	display: block;
+	margin-left:-8px;
+	font-size: 16px;
+	font-weight: 500;	
+}
+.block{
+	text-align: center;
+	display: inline-block;
+}
+.tableview {
+	border: 1px solid #D8D8D8;
+	border-radius: 6px;
+    margin-bottom: 60px;
+    margin-top: 15px;
+}
+.text-center{
+    caption-side: top;
+}

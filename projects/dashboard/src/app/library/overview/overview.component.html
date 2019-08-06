@@ -1,0 +1,39 @@
+<app-library-nav></app-library-nav>
+<div class="dashboard-content-wrapper">
+    <div class="container">
+        <div class="d-inline">
+            <h1>Farmers Market</h1>
+        </div>
+        <div class="d-inline float-right">
+            <p class="collaborators">Collaborators</p>
+            <div class="block" *ngFor="let c of collaborator, let i = index">
+                <span class="circle" [style.background-color]="color[i]">{{c}}</span>
+            </div>
+        </div>
+        <span>32 demos, 91 slides</span><br>
+        <span>URL: farmersmarket.sharedemos.com</span><br>
+        <span>Last Updated: 06/06/2019</span><br>
+        <button class="btn btn-primary mt-3">Edit Site</button><br>
+        <div class="mt-3">
+            <a routerLink="/library/permissions" class="ml-2">Permissions</a>
+            <a routerLink="preview" class="ml-2">Preview</a>
+        </div>
+        <div class="tableview">
+            <table class="table">
+                <caption class="text-center">SITEMAP</caption>
+                <tbody>
+                    <tr>
+                        <td>Category 1 <span>10 Demos, 15 slides</span></td>
+                    </tr>
+                    <tr>
+                        <td>Category 2 <span>10 Demos, 15 slides</span></td>
+                    </tr>
+                    <tr>
+                        <td>Category 3 <span>10 Demos, 15 slides</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

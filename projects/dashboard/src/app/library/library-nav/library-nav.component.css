@@ -1,0 +1,22 @@
+.library-nav {
+    box-shadow: 0 4px 6px 0 #F2F5F8;
+    list-style: none;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+}
+.library-nav li a {
+    padding: 25px 0;
+    margin: 0 20px;
+    color: #9FA8B2;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.library-nav li a:hover, .library-nav li a.active {
+    color: #3987F5;
+}

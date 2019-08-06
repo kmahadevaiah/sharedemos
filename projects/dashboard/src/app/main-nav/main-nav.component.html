@@ -1,0 +1,33 @@
+<perfect-scrollbar class="main-nav-perfect-scroller">
+    <div class="main-nav-wrapper">
+        <div class="content-nav">
+            <p class="nav-container-title">content</p>
+            <ul class="nav flex-column">
+                <li class="nav-item nav-library">
+                    <a class="nav-link" routerLink="/library" routerLinkActive="active">library</a>
+                </li>
+                <li class="nav-item nav-activity-feed">
+                    <a class="nav-link" routerLink="/activity-feed" routerLinkActive="active">activity feed</a>
+                </li>
+            </ul>
+        </div>
+        <div class="apps-nav">
+            <p class="nav-container-title">apps</p>
+            <ul *ngFor="let app of tenantAppArray" class="nav flex-column">
+                <li *ngIf="app.is_enabled" class="nav-item nav-{{app.id}}">
+                    <a class="nav-link" routerLink="/library">{{app.id}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</perfect-scrollbar>
+<div class="main-nav-footer">
+    <ul class="nav flex-row">
+        <li class="nav-item nav-settings col-6 ">
+            <a class="nav-link" routerLink="/library">settings</a>
+        </li>
+        <li class="nav-item nav-sign-out col-6">
+            <a class="nav-link" routerLink="/library">sign out</a>
+        </li>
+    </ul>
+</div>

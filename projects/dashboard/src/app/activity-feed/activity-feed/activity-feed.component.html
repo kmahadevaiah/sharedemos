@@ -1,0 +1,56 @@
+<app-activity-nav></app-activity-nav>
+<div class="container-fluid">
+    <div class="row">
+        <div [ngClass]="status ? 'col-9' : 'col-12'">
+            <div class="report-content-wrapper">
+                <div class="float-right">
+                    <button class="btn button-toggle btn-primary" (click)="onClick()"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                </div>
+                <div class="p-3">
+                    <li></li>
+                </div>
+            </div>
+        </div>
+        <div class="col-3" *ngIf="status">
+            <div class="filter_class p-3">
+                <h3 class="d-inline filter">Filter</h3>
+                <span class="float-right">
+                    <button class="btn btn-link clear-all">Clear all</button>
+                </span>
+                <div class="form-group">
+                    <label class="sub-heading">Matrics for</label>
+                    <select class="form-control">
+                        <option selected></option>
+                        <option value="1">Today</option>
+                        <option value="2">Yesterday</option>
+                        <option value="3">1 Week</option>
+                        <option value="4">1 Month</option>
+                        <option value="5">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="7">12 Months</option>
+                        <option value="">Custom</option>
+                    </select>  
+                    <i class="fa fa-chevron-down"></i>  
+                </div>
+                <div class="form-group">
+                    <label class="sub-heading">Language</label>
+                    <select class="form-control">
+                        <option selected></option>
+                        <option value="1">English (US)</option>
+                    </select>   
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+                <div class="form-group">             
+                    <label class="sub-heading">Categories</label>
+                    <br>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">All</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">a</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">abcdefghijklmno</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">Dairy</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">Demo</button>
+                    <button  class="btn btn-sm badge-pill btn-outline-primary m-1">Demo 2</button>               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

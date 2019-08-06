@@ -1,0 +1,65 @@
+<ul class="library-nav dashboard-content-nav">
+  <li><a routerLink="/library/permission" routerLinkActive="active">Permissions</a></li> 
+</ul>
+
+<div class="dashboard-content-wrapper">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text.</p>
+      <a href="#" class="btn btn-primary stretched-link">See Profile</a>
+    </div>
+  </div>
+</div>
+      
+<div class="container">
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add User</h4>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <span class="userhead">Username<span class="text-danger">*</span></span>
+              <p class="form-text text-muted subhead">Add first and last name for the user</p>
+              <div class="input-group">
+                <input type="text" class="form-control" required placeholder="first name">
+                <input type="text" class="form-control" required placeholder="last name">
+              </div>
+            </div>
+            <div class="form-group">
+              <span class="userhead">User Email<span class="text-danger">*</span></span>
+              <p class="form-text text-muted subhead">An activation link will be sent to this mail</p>
+              <input type="text" class="form-control" required placeholder="email@example.com">
+            </div>
+            <div class="form-group">
+              <span class="userhead">Permissions<span class="text-danger">*</span></span>
+              <p class="form-text text-muted subhead">Choose a permission level for this user</p>
+              <div class="radiobuttons">
+                <div class="radio"><input name="radio" value="1" id="radio1" type="radio" checked><label for="radio1">Admin (Site and User management, Authoring and Analytics access)</label></div>
+                <div class="radio"><input name="radio" value="2" id="radio2" type="radio"><label for="radio2">Author (Authoring and Analytics only)</label></div>
+                <div class="radio"><input name="radio" value="3" id="radio3" type="radio"><label for="radio3">Analytic (Analytic only)</label></div>
+              </div>
+            </div>
+          </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Save</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary btn-bottom" data-toggle="modal" data-target="#myModal">+</button>

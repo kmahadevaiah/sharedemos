@@ -1,0 +1,150 @@
+<app-library-nav></app-library-nav>
+<div class="dashboard-content-wrapper">
+    <nav class="navbar navbar-expand-sm justify-content-center setting-nav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/library/settings/general" routerLinkActive="activated active" class="navview">GENERAL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/library/settings/advanced" routerLinkActive="activated active" class="ml-5 navview">ADVANCED</a>
+            </li>
+        </ul>
+    </nav>
+    <hr>
+    <div class="container" *ngIf="advanceFormData">
+        <form [formGroup]="toggleForm">
+            <table class="table table-borderless">
+                <tbody> 
+                    <tr>
+                        <div class="form-group">
+                            <p class="d-inline mr-1 maintitle">ENABLE BOX INTEGRATION</p><i class="fa fa-info-circle info-icon"></i>
+                            <div class="float-right checkbox checbox-switch switch-primary">
+                                <span class="d-inline mr-1 text-primary" *ngIf="this.checklistData.box_integration_enabled?true:false">Enabled</span>
+                                <span class="d-inline text-dark mr-1" *ngIf="this.checklistData.box_integration_enabled?false:true">Disabled</span>
+                                <label>
+                                    <input type="checkbox" class="form-control" formControlName="box_integration_enabled" [checked]=this.checklistData.box_integration_enabled>
+                                    <span></span>                                        
+                                </label>
+                            </div>
+                            <p class="subtitle">Enabling box integration will allow you to import existing content from your box account when creating content on your site.</p>
+                        </div>
+                    </tr>
+                    <hr>
+                    <tr>
+                        <div class="form-group">
+                            <p class="d-inline maintitle">ENABLE PRIVATE SITE</p>
+                            <div class="float-right checkbox checbox-switch switch-primary">
+                                    <span class="d-inline mr-1 text-primary" *ngIf="this.checklistData.is_private?true:false">Enabled</span>
+                                    <span class="d-inline text-dark mr-1" *ngIf="this.checklistData.is_private?false:true">Disabled</span>
+                                <label>
+                                    <input type="checkbox" class="form-control" formControlName="is_private" [checked]=this.checklistData.is_private>
+                                    <span></span>                                        
+                                </label>
+                            </div>
+                            <p class="subtitle">Enabling private site will restrict access to anyone that does not have your permission to access your site. All forms of social sharing will also be disabled.</p>
+                        </div>
+                    </tr>
+                    <hr>
+                    <tr>         
+                        <div class="form-group">
+                            <p class="d-inline maintitle">ENABLE OFFLINE MODE</p>
+                            <div class="float-right checkbox checbox-switch switch-primary">
+                                    <span class="d-inline mr-1 text-primary" *ngIf="this.checklistData.allow_offline?true:false">Enabled</span>
+                                    <span class="d-inline text-dark mr-1" *ngIf="this.checklistData.allow_offline?false:true">Disabled</span>
+                                <label>
+                                    <input type="checkbox" class="form-control" formControlName="allow_offline" [checked]=this.checklistData.allow_offline>
+                                    <span></span>                                        
+                                </label>
+                            </div>
+                            <p class="subtitle">Enabling offline mode will allow all visitors to download sections of your site for offline viewing.</p>
+                        </div>
+                    </tr>
+                    <hr>
+                    <tr>         
+                        <div class="form-group">
+                            <p class="d-inline maintitle">ENABLE PDF EXPORT</p>
+                            <div class="float-right checkbox checbox-switch switch-primary">
+                                    <span class="d-inline mr-1 text-primary" *ngIf="this.checklistData.can_download?true:false">Enabled</span>
+                                    <span class="d-inline text-dark mr-1" *ngIf="this.checklistData.can_download?false:true">Disabled</span>
+                                <label>
+                                    <input type="checkbox" formControlName="can_download" [checked]=this.checklistData.can_download>
+                                    <span></span>                                        
+                                </label>
+                            </div>
+                            <p class="subtitle">Enabling PDF export will give your visitors the ability to download the content at playlist levels in PDF format. </p>
+                        </div>
+                    </tr>
+                    <hr>
+                    <tr>         
+                        <div class="form-group">
+                            <p class="d-inline maintitle">ENABLE EMBEDDED PLAYER</p>
+                            <div class="float-right checkbox checbox-switch switch-primary">
+                                    <span class="d-inline mr-1 text-primary" *ngIf="this.checklistData.can_embed?true:false">Enabled</span>
+                                    <span class="d-inline text-dark mr-1" *ngIf="this.checklistData.can_embed?false:true">Disabled</span>
+                                <label>
+                                    <input type="checkbox" class="form-control" formControlName="can_embed" [checked]=this.checklistData.can_embed>
+                                    <span></span>                                        
+                                </label>
+                            </div>
+                            <p class="subtitle">Enabling embedded player will give your visitors the ability to share your content through an embedded player in the share tab of your player.</p>
+                        </div>
+                    </tr>
+                    <hr>
+                    <tr>         
+                        <div class="form-group">
+                            <p class="d-inline maintitle">ENABLE CHAPTER AUTO FLOW</p>
+                            <div class="float-right checkbox checbox-switch switch-primary">
+                                    <span class="d-inline mr-1 text-primary" *ngIf="this.checklistData.chapter_autoflow?true:false">Enabled</span>
+                                    <span class="d-inline text-dark mr-1" *ngIf="this.checklistData.chapter_autoflow?false:true">Disabled</span>
+                                <label>
+                                    <input type="checkbox" class="form-control" formControlName="chapter_autoflow" [checked]=this.checklistData.chapter_autoflow>
+                                    <span></span>                                        
+                                </label>
+                            </div>
+                            <p class="subtitle">Enabling chapter auto flow will give your visitors the ability to see all the slides of a section in your player.</p>
+                        </div>
+                    </tr>
+                    <hr>
+                    <tr>         
+                        <div class="form-group">
+                            <p class="d-inline maintitle">ENABLE DEFAULT SHOW ADDITIONAL NOTES</p>
+                            <div class="float-right checkbox checbox-switch switch-primary">
+                                    <span class="d-inline mr-1 text-primary" *ngIf="this.checklistData.show_notes?true:false">Enabled</span>
+                                    <span class="d-inline text-dark mr-1" *ngIf="this.checklistData.show_notes?false:true">Disabled</span>
+                                <label>
+                                    <input type="checkbox" class="form-control" formControlName="show_notes" [checked]=this.checklistData.show_notes>
+                                    <span></span>                                        
+                                </label>
+                            </div>
+                            <p class="subtitle">Enabling Defaults Show notes will give your visitors the ability to see the additional notes by default</p>
+                        </div>
+                    </tr>
+                    <hr>
+                    <tr>         
+                        <div class="form-group">
+                            <p class="d-inline maintitle">ENABLE ANNOUNCEMENT WIDGET </p>
+                            <div class="float-right checkbox checbox-switch switch-primary">
+                                    <span class="d-inline mr-1 text-primary" *ngIf="this.announcementWidget?true:false">Enabled</span>
+                                    <span class="d-inline text-dark mr-1" *ngIf="this.announcementWidget?false:true">Disabled</span>
+                                <label>
+                                    <input type="checkbox" class="form-control" formControlName="announcementWidget" [checked]=this.announcementWidget>
+                                    <span></span>                                        
+                                </label>
+                            </div>
+                            <p class="subtitle">Enabling widget will help users create a quick link for the latest released chapters for highlighting</p>
+                        </div>
+                    </tr>
+                    <hr>
+                    <tr>
+                        <div class="form-group">
+                            <div class="submit_button">       
+                                <button type="submit" class="btn btn-outline-primary btn-light">Cancel</button>
+                                <button type="submit" class="btn btn-outline-primary btn-light save-btn" >Save</button>
+                            </div>  
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
